@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="flex gap-1 mt-4">
-        <UPopover mode="click" :popper="{ placement: 'top' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
+        <UPopover mode="click" :popper="{ placement: 'bottom' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
             <template #default="{ open }">
                 <UButton color="primary" variant="ghost" square aria-label="Choose color" icon="i-heroicons-swatch">
                     <div :style="{ background: options.penColor }" class="size-5 rounded-full" />
@@ -27,17 +27,18 @@
             </template>
 
             <template #panel>
-                <div class='flex flex-wrap gap-2 mt-4 p-2 rounded-md items-center justify-start'>
-                    <div v-for='color in colors' :key='color.color'>
+                <div class='flex flex-wrap gap-2 p-2 rounded-md items-center justify-start'>
+                    <template v-for='color in colors' :key='color.color'>
                         <button type='button' :style='{ background: color.rgba }'
-                            class='grid w-8 h-8 rounded-full place-items-center' @click='options.penColor = color.rgba'>
+                            class='grid w-8 h-8 rounded-full place-items-center border border-gray-200'
+                            @click='setColor(color.rgba)'>
                         </button>
-                    </div>
+                    </template>
                 </div>
             </template>
         </UPopover>
 
-        <UPopover mode="click" :popper="{ placement: 'top' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
+        <UPopover mode="click" :popper="{ placement: 'bottom' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
             <template #default="{ open }">
                 <UButton color="primary" variant="ghost" square aria-label="Choose stroke size"
                     icon="i-heroicons-pencil">
@@ -46,12 +47,12 @@
             </template>
 
             <template #panel>
-                <div class='flex flex-wrap gap-2 mt-4 p-2 rounded-md items-center justify-center'>
-                    <div v-for='size in sizes' :key='size.size'>
+                <div class='flex flex-wrap gap-2 p-2 rounded-md items-center justify-center'>
+                    <template v-for='size in sizes' :key='size.size'>
                         <button type='button' :class="[size.class]" :style='{ background: options.penColor }'
                             class='grid rounded-full place-items-center ' @click='options.maxWidth = size.width'>
                         </button>
-                    </div>
+                    </template>
                 </div>
             </template>
         </UPopover>
@@ -89,6 +90,11 @@ function save(base64String: string, filename: string = "signature.png"): void {
             download(dataURL, filename);
         }
     }
+}
+
+function setColor(color: string) {
+    options.value.penColor = color
+
 }
 
 function download(dataURL: string, filename: string): void {
