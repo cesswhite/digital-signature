@@ -32,7 +32,6 @@ Made by [Eco Development Studios](https://www.ecostudios.dev/)
 - **Price:** Free
 - **Released date:** 27/08/24
 - **Version:** 0.1
-- **Tech Stack:** Nuxt & TailwindCSS
 - **Category:** Drawing
 - **Page Speed:** 90 / 100 / 100 / 90
 - **Compatibility:** Chrome, Firefox, Safari, Brave, Arc, Edge
