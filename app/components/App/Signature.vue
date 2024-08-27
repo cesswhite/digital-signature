@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="flex gap-1 mt-4">
-        <UPopover mode="hover" :ui="{ width: 'w-full md:w-1/5' }">
+        <UPopover mode="click" :popper="{ placement: 'top' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
             <template #default="{ open }">
                 <UButton color="primary" variant="ghost" square aria-label="Choose color" icon="i-heroicons-swatch">
                     <div :style="{ background: options.penColor }" class="size-5 rounded-full" />
@@ -37,7 +37,7 @@
             </template>
         </UPopover>
 
-        <UPopover mode="hover" :ui="{ width: 'w-full md:w-1/5' }">
+        <UPopover mode="click" :popper="{ placement: 'top' }" :ui="{ width: 'w-full md:w-1/3 lg:w-1/5' }">
             <template #default="{ open }">
                 <UButton color="primary" variant="ghost" square aria-label="Choose stroke size"
                     icon="i-heroicons-pencil">
@@ -59,14 +59,13 @@
 </template>
 
 <script setup lang="ts">
-import type { CanvasSignatureRef } from '@selemondev/vue3-signature-pad'
 defineShortcuts({
     meta_z: undo,
     meta_k: clear,
     meta_d: save,
 })
 
-const signature = ref<CanvasSignatureRef>()
+const signature = ref()
 const { metaSymbol } = useShortcuts()
 const options = ref({
     penColor: 'rgb(0,0,0)',
@@ -109,8 +108,8 @@ function download(dataURL: string, filename: string): void {
 
 function dataURLToBlob(dataURL: string): Blob {
     const parts = dataURL.split(';base64,');
-    const contentType = parts[0].split(":")[1];
-    const raw = window.atob(parts[1]);
+    const contentType = parts[0]?.split(":")?.[1] ?? 'application/octet-stream';
+    const raw = window.atob(parts[1] ?? '');
     const rawLength = raw.length;
     const uInt8Array = new Uint8Array(rawLength);
 
