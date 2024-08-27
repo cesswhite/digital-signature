@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col justify-center items-center h-auto min-h-screen gap-4 relative ">
-        <div class="fixed top-2 right-2">
+        <div class="fixed top-2 right-2 z-10">
             <AppSwitchMode />
         </div>
         <div class="relative h-full py-32 px-4 md:py-0 md:px-0">
