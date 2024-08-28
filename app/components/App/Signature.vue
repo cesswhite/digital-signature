@@ -83,7 +83,7 @@ function clear() {
     return signature.value?.clearCanvas && signature.value?.clearCanvas()
 }
 
-function save(base64String: string, filename: string = "signature.png"): void {
+function save(filename: string = "signature.png"): void {
     if (signature.value) {
         const dataURL = signature.value?.saveSignature();
         if (dataURL) {
@@ -94,7 +94,6 @@ function save(base64String: string, filename: string = "signature.png"): void {
 
 function setColor(color: string) {
     options.value.penColor = color
-
 }
 
 function download(dataURL: string, filename: string): void {
@@ -104,6 +103,7 @@ function download(dataURL: string, filename: string): void {
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
+    a.target = "_blank";
     a.download = filename;
 
     document.body.appendChild(a);
