@@ -11,11 +11,31 @@ useSeoMeta({
   description: 'Create digital signatures effortlessly. Generate, customize, and download your digital signature instantly using our intuitive canvas interface. No need for complex setups or external services - everything happens right in your browser.',
   ogTitle: 'Signature | Digital Signature in Seconds',
   ogDescription: 'Create digital signatures effortlessly. Generate, customize, and download your digital signature instantly using our intuitive canvas interface. No need for complex setups or external services - everything happens right in your browser.',
-  ogImage: 'https://res.cloudinary.com/dpvsklksg/image/upload/v1724796869/Captura_de_pantalla_2024-08-27_a_la_s_4.13.32_p.m._tlwjj4.png',
-  ogUrl: 'https://res.cloudinary.com/dpvsklksg/image/upload/v1724796869/Captura_de_pantalla_2024-08-27_a_la_s_4.13.32_p.m._tlwjj4.png',
+  ogUrl: 'https://signature.ecostudios.dev/',
   ogType: 'website',
   ogSiteName: 'Signature | Digital Signature in Seconds',
-  ogImageWidth: 1200,
-  ogImageHeight: 630
+  twitterCard: 'summary',
+});
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      '@id': 'https://signature.ecostudios.dev/#app',
+      name: 'Signature',
+      url: 'https://signature.ecostudios.dev/',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web browser',
+      inLanguage: 'en',
+      creator: {
+        '@type': 'Organization',
+        '@id': 'https://www.ecostudios.dev/#organization',
+        name: 'Eco Development Studios',
+        url: 'https://www.ecostudios.dev/',
+      },
+    }),
+  }],
 });
 </script>
