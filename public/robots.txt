@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://signature.ecostudios.dev/sitemap.xml
