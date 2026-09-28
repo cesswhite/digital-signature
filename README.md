@@ -21,7 +21,7 @@ Made by [Eco Development Studios](https://www.ecostudios.dev/)
 
 - 💚 [Nuxt](https://nuxt.com/) - Open source framework that makes web development intuitive and powerful **with the new Nuxt 4 folder structure.**
 - 🎛 [Nuxt UI](https://ui.nuxt.com/) - A UI Library for Modern Web Apps.
-- ✏️ [Nuxt Signature Pad](vue3-signature-pad.vercel.app) - Smooth signature drawing component
+- ✏️ [Nuxt Signature Pad](https://vue3-signature-pad.vercel.app) - Smooth signature drawing component
 - 🎨 [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes.
 - 😀 [Heroicons](https://github.com/simple-icons/simple-icons) - Integration with Heroicons.
 - ⚡️ [Vite](https://vitejs.dev/) - Powered by Vite, instant HMR.
@@ -36,22 +36,16 @@ Made by [Eco Development Studios](https://www.ecostudios.dev/)
 - **Page Speed:** 90 / 100 / 100 / 90
 - **Compatibility:** Chrome, Firefox, Safari, Brave, Arc, Edge
 
-## Folder and Component Structrue
+## Folder and Component Structure
 
-The components that are used are inside the `app/components` folder.
-
-```bash
-# src/app/components/
- - Component1 (SFC a.k.a .vue file)
- - Component2 (SFC a.k.a .vue file)
-```
+The app uses Nuxt 3 with `future.compatibilityVersion: 4`, so the entry is `app/app.vue`. Its four components are `app/components/App/Hero.vue`, `Signature.vue`, `Footer.vue`, and `SwitchMode.vue`. Drawing and download behavior lives in `Signature.vue`.
 
 ## Credits and Acknowledgements
 
 We extend our heartfelt gratitude to the creators of these amazing tools that have inspired and empowered this project:
 
 - [Atidraw](https://github.com/atinux/atidraw)
-- [Signature Pad](szimek.github.io/signature_pad/)
+- [Signature Pad](https://szimek.github.io/signature_pad/)
 
 ## Setup
 
@@ -59,7 +53,7 @@ Make sure to install the dependencies:
 
 ```bash
 # npm
-npm install
+npm ci
 ```
 
 ## Development Server
@@ -88,3 +82,7 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Agent and contributor guide
+
+Start with [AGENTS.md](AGENTS.md) and [docs/REPOSITORY_GUIDE.md](docs/REPOSITORY_GUIDE.md) for implemented behavior, code entry points, boundaries and repository commands.

@@ -1,0 +1,14 @@
+# Signature
+
+> A browser tool for drawing and downloading a signature image.
+
+Draw a signature, choose a pen color and stroke width, undo or clear strokes, and download the result. The public site has one page.
+
+## Public page
+
+- [Signature](https://signature.ecostudios.dev/)
+
+## References
+
+- [Sitemap](https://signature.ecostudios.dev/sitemap.xml)
+- [Publisher: Eco Development Studios](https://www.ecostudios.dev/)

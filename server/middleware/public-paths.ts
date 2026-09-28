@@ -1,5 +1,5 @@
 // This application has a single public page; unknown paths must not render it.
-const publicPaths = new Set(['/', '/robots.txt', '/sitemap.xml', '/favicon.ico'])
+const publicPaths = new Set(['/', '/robots.txt', '/sitemap.xml', '/llms.txt', '/favicon.ico'])
 
 export default defineEventHandler((event) => {
   const pathname = getRequestURL(event).pathname
